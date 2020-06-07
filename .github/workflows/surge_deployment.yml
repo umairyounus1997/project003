@@ -23,12 +23,8 @@ on:
     - name: Build React App
       run: yarn build
             
-      - name: Install Surge
-        run: npm install -g surge
+    - name: Install Surge
+      run: npm install -g surge
              
-       - name: Deploy to Surge
-        run: surge ./build project003-umair.surge.sh --token ${{ secrets.SURGE_TOKEN }}
-          
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Deploy to Surge
+      run: surge ./build project003-umair.surge.sh --token ${{ secrets.SURGE_TOKEN }}
